@@ -6,7 +6,7 @@ jobs:
     steps:
     - name: simple js run-github-actions
       id: greet
-      uses:  actions /hello-world-javascript-action@v1
+      uses:  actions/hello-world-javascript-action@v1
       with:
         who-to-greet: madhav
     - name: log greeing time
