@@ -18,7 +18,7 @@ jobs:
     
     steps: 
       -  name: show custom env 
-         if: ${{ env.platform == "GitHub"}}
+         if: ${{ env.platform == GitHub }}
          run: |
            echo "The Platform is ${{ env.platform }}"
            echo "the region is $region " 
