@@ -3,8 +3,8 @@ name: Action Workflow
 on: 
   #push:
   schedule: 
-    - cron: "0/5 * * * *"   # (every 5mins)
-    - cron: "0/6 * * * *"   # (every 6mins)
+    - cron: "0/2 * * * *"   # (every 2mins)
+    - cron: "0/4 * * * *"   # (every 4mins)
   pull_request:
     types: [opened, closed, reopened, assinged] 
 
