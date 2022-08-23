@@ -1,0 +1,25 @@
+name: Action Workflow
+
+on: 
+  #push:
+  schedule: 
+    - cron: "0/5 * * * *"   # (every 5mins)
+    - cron: "0/6 * * * *"   # (every 6mins)
+  pull_request:
+    types: [opened, closed, reopened, assinged] 
+
+jobs:
+  runs-github-actions:  
+    runs-on: ubuntu-latest
+    env: 
+        platform: GitHub
+        region: Asia-India
+        profile-path: profile/
+    
+    steps: 
+      -  name: show custom env 
+         if: ${{ env.platform == "GitHub"}}
+         run: |
+           echo "The Platform is ${{ env.platform }}"
+           echo "the region is $region " 
+    
