@@ -1,10 +1,10 @@
-name: Action Workflow1
+name: Action Workflow1.0
 
 on: 
   push:
   schedule: 
-    - cron: "0/2 * * * *"   # (every 2mins)
-    - cron: "0/4 * * * *"   # (every 4mins)
+    - cron: "0/1 * * * *"   # (every 1mins)
+    - cron: "0/8 * * * *"   # (every 8mins)
   #pull_request:
     #types: [opened, closed, reopened, assigned ]  
 
