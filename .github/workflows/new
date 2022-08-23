@@ -1,0 +1,81 @@
+
+
+name: test2
+
+on:
+
+  push:
+    branches: [ "branch1" ]
+  pull_request:
+    branches: [ "main" ]
+ 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run multi-line script
+        run: |
+          echo what is the directory ?
+          ls -a 
+          echo To installing maven
+          sudo apt update
+          sudo apt-get install -y default-jdk
+          checking java version
+          java -version
+          suto apt-get install -y maven 
+          echo checking maven version
+          maven -version
+          echo task complete !!
+
+build-on-ubuntu:
+      runs-on: ubuntu-latest
+     
+      steps:
+      -  name: Run to know workspace location on this created vm
+         run: |
+           echo workspace is 
+           echo $RUNNER_WORKSPACE 
+           echo who is running this ?
+           whoami
+           echo disk available
+           df 
+           echo show available env varibles
+           env
+
+build-on-windows: 
+      runs-on: windows-latest
+
+      steps:
+      -  name: run windows Commands
+         run: |
+           Hii Welcome to Windows
+           echo get-location Commands
+           Get-Location
+
+job2: 
+  Display: 
+      runs-on: ubuntu-latest          
+
+      env: 
+        platform: GitHub
+        region: Asia-India
+        profile-path: profile/
+      
+      steps: 
+      -  name: show custom env 
+         if: ${{ env.platform == "GitHub"}}
+         run: |
+           echo "The Platform is ${{ env.platform }}"
+           echo "the region is $region " 
+
+      -  name: Display default GitHub env. varibles
+         run: |
+           echo "GitHub Action Path: $GITHUB_ACTION_PATH"
+           echo "GitHub Actor: $GITHUB_ACTOR" 
+           echo "GitHub Env: $GITHUB_ENV" 
+           echo "Github Dispatch: $GITHUB_EVENT_NAME"   
+            
+
+          

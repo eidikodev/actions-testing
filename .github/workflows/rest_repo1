@@ -1,0 +1,41 @@
+name: Action Workflow
+on: 
+<<<<<<< HEAD
+  push: 
+  pull_request:
+    types: [closed,assinged,opened,reopened]
+=======
+    [pull_request]
+type: [closed,assinged,opened,reopened]
+>>>>>>> 394f9a8307e2a7e1523af6b8a4b418d0516f8cf7
+
+jobs:
+  run-github-actions:
+    runs-on: winodws-latest
+    steps:
+    - name: list all file
+      run: |
+        pwd
+        ls -a
+        echo $GITHUB_JOB
+        echo $GITHUB_REPOSITORY
+        echo $GITHUB_WORKSPACE
+        echo "${{github.token}}"
+        # git clone 
+        # git@github:$GITHUB_REPOSITORY
+        # git checkout $GITHUB_SHA
+    - name: checkout
+      uses: actions/checkout@v3
+    - name: list files after checkout
+      run: |
+        pwd
+        ls -a  
+    - name: simple js run-github-actions
+      id: greet
+      uses:  actions/hello-world-javascript-action@v1
+      with:
+        who-to-greet: madhav
+    - name: Log Greeting Time
+      run: echo "${{steps.greet.outputs.time}}"  
+       echo task complete !!
+
