@@ -26,4 +26,5 @@ jobs:
          run: Get-location
       -  name: directory Bash
          run: pwd
-         shell: bash     
+         shell: bash  
+            
