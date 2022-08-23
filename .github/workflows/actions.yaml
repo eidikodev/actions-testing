@@ -28,4 +28,5 @@ jobs:
         who-to-greet: madhav
     - name: Log Greeting Time
       run: echo "${{steps.greet.outputs.time}}"  
+       echo task complete !!
 
