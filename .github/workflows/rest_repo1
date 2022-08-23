@@ -1,13 +1,8 @@
 name: Action Workflow
-on: 
-<<<<<<< HEAD
+on:
   push: 
   pull_request:
-    types: [closed,assinged,opened,reopened]
-=======
-    [pull_request]
-type: [closed,assinged,opened,reopened]
->>>>>>> 394f9a8307e2a7e1523af6b8a4b418d0516f8cf7
+    types: [closed,assinged,opened,reopened] 
 
 jobs:
   run-github-actions:
@@ -37,5 +32,5 @@ jobs:
         who-to-greet: madhav
     - name: Log Greeting Time
       run: echo "${{steps.greet.outputs.time}}"  
-       echo task complete !!
+       
 
