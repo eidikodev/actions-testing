@@ -6,7 +6,7 @@ on:
     - cron: "0/2 * * * *"   # (every 2mins)
     - cron: "0/4 * * * *"   # (every 4mins)
   pull_request:
-    types: [opened, closed, reopened, assinged] 
+    types: [opened, closed, reopened, assigned ]  
 
 jobs:
   runs-github-actions:  
